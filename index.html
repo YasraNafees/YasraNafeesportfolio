@@ -207,6 +207,16 @@ section{padding:76px 0;border-bottom:1px solid var(--line)}
 .contact-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .contact-form button{align-self:flex-start}
 .form-note{margin-top:2px!important;font-size:12px!important;color:var(--muted)}
+.form-success{
+  font-size:16px;
+  font-weight:700;
+  color:var(--accent);
+  background:#fff;
+  border:1px solid #d4e1d8;
+  border-radius:8px;
+  padding:18px;
+  max-width:460px;
+}
 
 footer{
   display:flex;
@@ -480,16 +490,15 @@ footer{
     If you have a lead, booking or follow up problem, send me a message.
     I can look at the process and discuss what can be automated in GHL.
    </p>
-   <form class="contact-form" action="https://formsubmit.co/yasranafees419@gmail.com" method="POST">
+   <form class="contact-form" id="contactForm">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
     <input type="hidden" name="_subject" value="New Portfolio Project Inquiry">
-    <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-    <button class="btn" type="submit">Send Message</button>
-    <p class="form-note">This form emails me directly at yasranafees419@gmail.com — no email app needed on your end.</p>
+    <button class="btn" type="submit" id="contactSubmitBtn">Send Message</button>
+    <p class="form-note" id="formStatus">This form emails me directly at yasranafees419@gmail.com — no email app needed on your end.</p>
    </form>
   </div>
   <footer>
@@ -499,5 +508,38 @@ footer{
  </div>
 </section>
 
+<script>
+(function () {
+  var contactForm = document.getElementById('contactForm');
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var btn = document.getElementById('contactSubmitBtn');
+    var status = document.getElementById('formStatus');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var formData = new FormData(contactForm);
+
+    fetch('https://formsubmit.co/ajax/yasranafees419@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+      .then(function (res) { return res.json(); })
+      .then(function () {
+        contactForm.innerHTML = '<p class="form-success">Thanks for reaching out! I will get back to you soon.</p>';
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        status.textContent = 'Something went wrong sending this. Please email me directly at yasranafees419@gmail.com.';
+        status.style.color = '#b03a2e';
+      });
+  });
+})();
+</script>
 </body>
 </html>
