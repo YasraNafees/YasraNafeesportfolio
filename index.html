@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yasra | GHL Automation Portfolio</title>
+<meta name="description" content="Yasra is a final year Software Engineering student who builds practical GoHighLevel funnels, CRM workflows, booking systems and follow up automations.">
+<style>
+:root{
+  --bg:#f7f8f6;
+  --surface:#ffffff;
+  --text:#18201b;
+  --muted:#5f6962;
+  --line:#dfe5df;
+  --accent:#315c49;
+  --accent2:#e7efe9;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:0 24px}
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(247,248,246,.96);
+  border-bottom:1px solid var(--line);
+}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:19px;font-weight:700}
+.logo b{color:var(--accent)}
+.links{display:flex;gap:25px;color:var(--muted);font-size:14px}
+.links a:hover{color:var(--accent)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:#fff;
+  padding:11px 17px;
+  border-radius:7px;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+}
+.btn.alt{background:#fff;color:var(--text);border-color:var(--line)}
+.hero{
+  padding:90px 0 72px;
+  border-bottom:1px solid var(--line);
+  background:#fbfcfa;
+}
+.eyebrow{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+h1{
+  font-size:clamp(42px,6vw,68px);
+  line-height:1.05;
+  letter-spacing:-.04em;
+  max-width:850px;
+  margin-top:15px;
+  font-weight:750;
+}
+h1 span{color:var(--accent)}
+.hero p{
+  max-width:720px;
+  color:var(--muted);
+  font-size:18px;
+  margin:23px 0 27px;
+}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.stats{
+  display:flex;
+  gap:42px;
+  flex-wrap:wrap;
+  border-top:1px solid var(--line);
+  margin-top:48px;
+  padding-top:22px;
+}
+.stats strong{display:block;font-size:20px}
+.stats small{color:var(--muted)}
+section{padding:76px 0;border-bottom:1px solid var(--line)}
+.head{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:end;
+  margin-bottom:30px;
+}
+.head h2{
+  font-size:38px;
+  line-height:1.1;
+  letter-spacing:-.035em;
+}
+.head p{max-width:500px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+}
+.cardbody{padding:21px}
+.card h3{font-size:20px;line-height:1.25;margin:8px 0}
+.card p{color:var(--muted);font-size:14px}
+.number{
+  font-size:11px;
+  color:var(--accent);
+  font-weight:700;
+  letter-spacing:.09em;
+}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}
+.tag{
+  font-size:11px;
+  border:1px solid var(--line);
+  padding:5px 8px;
+  border-radius:6px;
+  color:var(--muted);
+  background:#fafbfa;
+}
+.featured{grid-column:span 2}
+.featured .cardbody{padding:25px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:17px}
+.flow span{
+  font-size:12px;
+  background:var(--accent2);
+  border:1px solid #d4e1d8;
+  padding:6px 8px;
+  border-radius:6px;
+}
+.arrow{color:var(--accent)}
+.projectlinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.projectlinks .btn{font-size:12px;padding:8px 11px}
+.cover{height:205px;overflow:hidden;background:#eef1ed}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.service{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:22px;
+}
+.service h3{margin-bottom:6px;font-size:18px}
+.service p{color:var(--muted);font-size:14px}
+.about{display:grid;grid-template-columns:1fr 1.25fr;gap:60px}
+.about h2{font-size:42px;line-height:1.08;letter-spacing:-.04em;margin-top:9px}
+.about p{color:var(--muted);margin-bottom:15px}
+.stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
+.stack span{
+  background:var(--surface);
+  border:1px solid var(--line);
+  padding:7px 10px;
+  border-radius:6px;
+  font-size:12px;
+}
+.status{
+  display:inline-flex;
+  gap:7px;
+  align-items:center;
+  padding:6px 9px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  color:var(--muted);
+  font-size:11px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.cta{
+  background:#e7efe9;
+  border:1px solid #d4e1d8;
+  border-radius:14px;
+  padding:42px;
+}
+.cta h2{
+  font-size:40px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+  max-width:700px;
+  margin-top:7px;
+}
+.cta p{max-width:650px;margin:14px 0 23px;color:var(--muted)}
+.cta .btn{background:var(--accent);color:#fff;border-color:var(--accent)}
+.contact-form{display:flex;flex-direction:column;gap:12px;max-width:460px}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea{
+  font-family:inherit;
+  font-size:14px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fff;
+  color:var(--text);
+  resize:vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.contact-form button{align-self:flex-start}
+.form-note{margin-top:2px!important;font-size:12px!important;color:var(--muted)}
+
+footer{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#78827b;
+  font-size:12px;
+  padding:25px 0;
+}
+.note{margin-top:17px;color:var(--muted);font-size:13px}
+@media(max-width:850px){
+  .links{display:none}
+  .grid,.services,.about{grid-template-columns:1fr}
+  .featured{grid-column:span 1}
+  .head{display:block}
+  .head p{margin-top:12px}
+  .hero{padding-top:70px}
+  .cta{padding:30px}
+  .cta h2{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="wrap nav">
+  <a class="logo" href="#">YASRA<b>.</b></a>
+  <div class="links">
+   <a href="#work">My Work</a>
+   <a href="#services">Services</a>
+   <a href="#about">About Me</a>
+   <a href="#contact">Contact</a>
+  </div>
+  <a class="btn" href="#contact">Contact Me</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="eyebrow">GoHighLevel Automation</div>
+  <h1>I build simple systems for <span>leads, bookings and follow up.</span></h1>
+  <p>
+   I am Yasra, a final year Software Engineering student. I build practical GoHighLevel funnels,
+   CRM workflows, booking systems and customer follow up automations.
+  </p>
+  <div class="actions">
+   <a class="btn" href="#work">See My Work</a>
+   <a class="btn alt" href="#contact">Talk to Me</a>
+  </div>
+  <div class="stats">
+   <div><strong>GoHighLevel</strong><small>Funnels and CRM</small></div>
+   <div><strong>Automation</strong><small>Workflows and follow up</small></div>
+   <div><strong>Software Engineering</strong><small>Technical background</small></div>
+  </div>
+ </div>
+</header>
+
+<section id="work">
+ <div class="wrap">
+  <div class="head">
+   <h2>My Work</h2>
+   <p>Here are some of the systems I have built and tested while learning GoHighLevel automation.</p>
+  </div>
+
+  <div class="grid">
+
+   <article class="card featured">
+    <div class="cover"><img src="assets/pipeline.PNG" alt="Customer onboarding pipeline in GoHighLevel"></div>
+    <div class="cardbody">
+     <div class="number">01 • CUSTOMER ONBOARDING</div>
+     <h3>New Customer Onboarding System</h3>
+     <p>
+      I built a customer onboarding system for a roofing business. It collects customer information,
+      books the kickoff call, updates the pipeline and sends customer messages during the job.
+     </p>
+     <div class="flow">
+      <span>New Customer</span><b class="arrow">→</b>
+      <span>Info Collected</span><b class="arrow">→</b>
+      <span>Kickoff</span><b class="arrow">→</b>
+      <span>In Progress</span><b class="arrow">→</b>
+      <span>Delivered</span>
+     </div>
+     <div class="tags">
+      <span class="tag">GoHighLevel</span><span class="tag">CRM</span><span class="tag">Pipeline</span>
+      <span class="tag">Forms</span><span class="tag">Calendar</span><span class="tag">Email</span><span class="tag">SMS</span>
+     </div>
+     <div class="projectlinks">
+      <a class="btn" href="#evidence">See Screenshots</a>
+      <a class="btn alt" href="https://www.loom.com/share/41be136ab465449dbdea4a0323f381c3" target="_blank" rel="noopener">Watch Loom</a>
+     </div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/Form.PNG" alt="Roofing customer information form"></div>
+    <div class="cardbody">
+     <div class="number">02 • ROOFING</div>
+     <h3>Roofing Customer Form</h3>
+     <p>I created a form to collect the property address, roof type, photos, access details, start date and HOA information.</p>
+     <div class="tags"><span class="tag">GHL Form</span><span class="tag">Customer Data</span><span class="tag">Roofing</span></div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/info submitted workfollow.PNG" alt="Information submitted workflow"></div>
+    <div class="cardbody">
+     <div class="number">03 • CRM</div>
+     <h3>Form to CRM Workflow</h3>
+     <p>When a customer submits the form, the workflow adds a tag, updates the opportunity and sends an email.</p>
+     <div class="tags"><span class="tag">Workflow</span><span class="tag">Tags</span><span class="tag">Opportunity</span></div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/kickoff workflows.PNG" alt="Kickoff booking workflow"></div>
+    <div class="cardbody">
+     <div class="number">04 • BOOKING</div>
+     <h3>Kickoff Booking Workflow</h3>
+     <p>After a kickoff appointment is booked, the workflow updates the customer and moves the opportunity to the right stage.</p>
+     <div class="tags"><span class="tag">Calendar</span><span class="tag">Appointment</span><span class="tag">CRM</span></div>
+     <div class="projectlinks">
+      <a class="btn" href="https://www.loom.com/share/9edb67dd44234f8682661b5c85cd7711" target="_blank" rel="noopener">Watch Loom</a>
+     </div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/job in  progress workfollow.PNG" alt="Job in progress workflow"></div>
+    <div class="cardbody">
+     <div class="number">05 • JOB UPDATES</div>
+     <h3>Job In Progress Workflow</h3>
+     <p>When the job moves to the next stage, the workflow sends an update to the customer and keeps the CRM status clear.</p>
+     <div class="tags"><span class="tag">Pipeline</span><span class="tag">Email</span><span class="tag">SMS</span></div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/review request.PNG" alt="Review request workflow"></div>
+    <div class="cardbody">
+     <div class="number">06 • REVIEW REQUEST</div>
+     <h3>Review Request Workflow</h3>
+     <p>After the job is delivered, the workflow waits and then sends an email and SMS asking the customer for a review.</p>
+     <div class="tags"><span class="tag">Wait</span><span class="tag">Email</span><span class="tag">SMS</span></div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/Discovery call workflow.PNG" alt="Discovery call booked workflow"></div>
+    <div class="cardbody">
+     <div class="number">07 • DISCOVERY CALL</div>
+     <h3>Discovery Call Workflow</h3>
+     <p>I built a workflow that updates the CRM and sends follow up after a discovery call is booked.</p>
+     <div class="tags"><span class="tag">Pipeline</span><span class="tag">Tag</span><span class="tag">Email</span></div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/Auto Tag workfollow.PNG" alt="Auto tag workflow"></div>
+    <div class="cardbody">
+     <div class="number">08 • CRM LOGIC</div>
+     <h3>Auto Tag Workflow</h3>
+     <p>This workflow adds tags based on the customer and pipeline information, then continues with the right follow up.</p>
+     <div class="tags"><span class="tag">Automation</span><span class="tag">Tags</span><span class="tag">Conditions</span></div>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="cover"><img src="assets/result.PNG" alt="Workflow execution result"></div>
+    <div class="cardbody">
+     <div class="number">09 • TESTING</div>
+     <h3>Workflow Testing</h3>
+     <p>I checked the workflow execution history to make sure the tags and opportunity updates were running correctly.</p>
+     <div class="tags"><span class="tag">Execution Logs</span><span class="tag">Testing</span><span class="tag">QA</span></div>
+    </div>
+   </article>
+
+   <article class="card featured">
+    <div class="cardbody">
+     <div class="number">10 • CURRENT BUILD</div>
+     <div class="status"><i class="dot"></i> In progress</div>
+     <h3 style="margin-top:16px">AI Voice Receptionist with GHL</h3>
+     <p>
+      I am working on a voice receptionist that can collect a caller's details and send them to GHL
+      through a webhook. The next step is to test the full appointment booking flow.
+     </p>
+     <div class="flow">
+      <span>Caller</span><b class="arrow">→</b>
+      <span>Voice AI</span><b class="arrow">→</b>
+      <span>Webhook</span><b class="arrow">→</b>
+      <span>GHL Contact</span><b class="arrow">→</b>
+      <span>Calendar</span>
+     </div>
+     <div class="tags"><span class="tag">Vapi or Retell</span><span class="tag">Webhooks</span><span class="tag">GoHighLevel</span><span class="tag">Voice AI</span></div>
+     <p class="note">I will mark this as complete after the live call and appointment test are finished.</p>
+    </div>
+   </article>
+
+  </div>
+ </div>
+</section>
+
+<section id="evidence">
+ <div class="wrap">
+  <div class="head">
+   <h2>Some Screenshots</h2>
+   <p>These screenshots show parts of the workflows, forms, calendars and CRM setup I have worked on.</p>
+  </div>
+  <div class="grid">
+   <article class="card"><div class="cover"><img src="assets/pipline.PNG" alt="Pipeline configuration"></div><div class="cardbody"><h3>Pipeline</h3><p>Customer onboarding stages in GHL.</p></div></article>
+   <article class="card"><div class="cover"><img src="assets/Form submitted trigger.PNG" alt="Form submitted trigger"></div><div class="cardbody"><h3>Form Trigger</h3><p>The form starts the workflow.</p></div></article>
+   <article class="card"><div class="cover"><img src="assets/job  in progress trigger.PNG" alt="Job in progress trigger"></div><div class="cardbody"><h3>Job Trigger</h3><p>The pipeline stage starts the job update workflow.</p></div></article>
+   <article class="card"><div class="cover"><img src="assets/job delivered workflows.PNG" alt="Job delivered workflow"></div><div class="cardbody"><h3>Delivered Workflow</h3><p>Customer communication after delivery.</p></div></article>
+   <article class="card"><div class="cover"><img src="assets/calendar.PNG" alt="Booking calendar"></div><div class="cardbody"><h3>Booking Calendar</h3><p>Customer facing calendar for kickoff calls.</p></div></article>
+   <article class="card"><div class="cover"><img src="assets/calender.PNG" alt="Calendar availability"></div><div class="cardbody"><h3>Calendar Setup</h3><p>Available times and calendar settings.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="head">
+   <h2>What I Can Help With</h2>
+   <p>I am keeping my services focused on the parts of GHL I have actually practiced.</p>
+  </div>
+  <div class="services">
+   <div class="service"><h3>Lead Capture</h3><p>Landing pages, forms and simple lead capture flows.</p></div>
+   <div class="service"><h3>CRM Setup</h3><p>Basic pipelines, tags and opportunity organization.</p></div>
+   <div class="service"><h3>Missed Call Text Back</h3><p>SMS follow up when a business misses a potential customer's call.</p><div class="projectlinks"><a class="btn" href="https://www.loom.com/share/e3173c756e1c44f5b72aa098734aa00f" target="_blank" rel="noopener">Watch Loom</a></div></div>
+   <div class="service"><h3>Lead Follow Up</h3><p>Email and SMS workflows for new leads and appointments.</p></div>
+   <div class="service"><h3>Booking Automation</h3><p>Calendars, confirmations, reminders and CRM updates.</p></div>
+   <div class="service"><h3>Customer Onboarding</h3><p>Forms, pipeline stages and messages after a customer starts a service.</p></div>
+   <div class="service"><h3>Workflow Fixes</h3><p>I can check triggers, actions, tags and workflow logic when an automation is not working as expected.</p></div>
+   <div class="service"><h3>Webhooks and APIs</h3><p>Simple connections between GHL and other tools when a workflow needs them.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap about">
+  <div>
+   <div class="eyebrow">About Me</div>
+   <h2>I am a Software Engineering student who enjoys building things and solving problems.</h2>
+  </div>
+  <div>
+   <p>
+    I am Yasra, a final year Software Engineering student. I started working with GoHighLevel
+    because I wanted to learn how business systems work and how automation can reduce repetitive work.
+   </p>
+   <p>
+    I like understanding a problem first, testing the workflow and then fixing what is not working.
+    My background also includes Python, APIs, AI projects and chatbot development.
+   </p>
+   <p>
+    This website shows my practical GHL work and the systems I have built while learning.
+   </p>
+   <div class="stack">
+    <span>GoHighLevel</span><span>CRM</span><span>Funnels</span><span>Email</span>
+    <span>SMS</span><span>Zapier</span><span>Webhooks</span><span>OpenAI API</span>
+    <span>Google Sheets</span><span>Python</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="cta">
+   <div class="eyebrow">Have a project?</div>
+   <h2>Tell me what you want to automate.</h2>
+   <p>
+    If you have a lead, booking or follow up problem, send me a message.
+    I can look at the process and discuss what can be automated in GHL.
+   </p>
+   <form class="contact-form" action="https://formsubmit.co/yasranafees419@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+    <input type="hidden" name="_subject" value="New Portfolio Project Inquiry">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <button class="btn" type="submit">Send Message</button>
+    <p class="form-note">This form emails me directly at yasranafees419@gmail.com — no email app needed on your end.</p>
+   </form>
+  </div>
+  <footer>
+   <span>© 2026 Yasra</span>
+   <span>Software Engineering Student • GHL Automation</span>
+  </footer>
+ </div>
+</section>
+
+</body>
+</html>
